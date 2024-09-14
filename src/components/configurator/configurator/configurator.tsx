@@ -55,25 +55,24 @@ function Configurator() {
     <div className='w-full justify-start h-screen overflow-hidden flex flex-col md:grid md:grid-cols-2 relative overflow-y-hidden'>
       <div className='mt-[calc(var(--nav-height)+2.627rem)] h-[calc(35*var(--vh))] xxxl:mt-[calc(100vh-var(--drawer-height)-1px)] xxxl:h-[calc(var(--drawer-height)+1px)] xxxl:bg-[#efefef] xxxl:dark:bg-[#0b0b24]' />
       <Divider className='md:hidden' />
-      {isMobile ||
-        (isTablet && (
-          <div className='absolute top-navbarHeight h-[2.625rem] w-full'>
-            <m.div
-              animate={{ opacity: 1, y: 0, transition: { delay: 0.1, duration: 0.4 } }}
-              exit={{ opacity: 0 }}
-              initial={{ opacity: 0, y: -100 }}
-            >
-              <Divider />
-              <RowSteps
-                currentStep={currentStep}
-                stepClassName='p-2 uppercase'
-                steps={STEPS}
-                onStepChange={handleStepChange}
-              />
-              <Divider />
-            </m.div>
-          </div>
-        ))}
+      {(isMobile || isTablet) && (
+        <div className='absolute top-navbarHeight h-[2.625rem] w-full'>
+          <m.div
+            animate={{ opacity: 1, y: 0, transition: { delay: 0.1, duration: 0.4 } }}
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, y: -100 }}
+          >
+            <Divider />
+            <RowSteps
+              currentStep={currentStep}
+              stepClassName='p-2 uppercase'
+              steps={STEPS}
+              onStepChange={handleStepChange}
+            />
+            <Divider />
+          </m.div>
+        </div>
+      )}
       <m.div
         key={useId()}
         animate={{ opacity: 1, x: 0 }}

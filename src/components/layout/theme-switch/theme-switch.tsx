@@ -43,7 +43,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({ className, classNames }) => 
           class: clsx(
             [
               'w-auto h-auto',
-              'bg-transparent',
+              '!bg-transparent',
               'rounded-lg',
               'flex items-center justify-center',
               'group-data-[selected=true]:bg-transparent',
