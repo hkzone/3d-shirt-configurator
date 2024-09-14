@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gap-padding: max(1em, 3.5vw);
+  --nav-height: 4rem;
+  --drawer-height: 9rem;
+  --shimmer-width: 100px;
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --drawer-height: 6.5rem;
+  }
+}
